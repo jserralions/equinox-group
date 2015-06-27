@@ -1,0 +1,14 @@
+defaults: &defaults
+  not_a_secret: test
+
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults
