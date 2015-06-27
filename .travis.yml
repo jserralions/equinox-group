@@ -1,3 +1,5 @@
 before_script:
   - cp config/database.yml.sample config/database.yml
   - psql -c 'create database equinox-group_test;' -U postgres
+rvm:
+    - 2.1.6
