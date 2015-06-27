@@ -14,6 +14,8 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     authorize @recipe
+    @recipe.recipe_items.build
+    @recipe.ingredients.build
   end
 
   # GET /recipes/1/edit
@@ -58,6 +60,7 @@ class RecipesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def recipe_params
       params.require(:recipe).permit(:name, :category,
-                                     recipe_item_attributes:[:amout, :measure])
+                                     recipe_items_attributes: [:measure, :amout],
+                                     ingredients_attributes: [:name])
     end
 end

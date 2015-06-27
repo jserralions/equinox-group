@@ -48,7 +48,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-
+gem 'faker'
 gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'

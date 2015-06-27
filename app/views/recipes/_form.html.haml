@@ -9,10 +9,10 @@
     = f.input :name
     = f.input :category
     %button.btn.btn-success Add Ingredient
-    = f.simple_fields_for :ingredient, html: { class: "hidden" } do  |p|
-      = p.input :name, label: "Ingredient" 
-      = p.input :amount
-      = p.input :measure
-    %button.btn.btn-success Confirm
+    = f.simple_fields_for :ingredients do  |ing|
+      = ing.input :name
+    = f.simple_fields_for :recipe_items do  |ri|
+      = ri.input :amout
+      = ri.input :measure
     %br
     = f.button :submit, class: "btn btn-success btn-lg", role: "button"
