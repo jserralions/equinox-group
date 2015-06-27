@@ -1,9 +1,9 @@
-= simple_form_for @recipe, html: {class: "well"} do |f|
-  - if @recipe.errors.any?
+= simple_form_for recipe, html: {class: "well"} do |f|
+  - if recipe.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
+      %h2= "#{pluralize(recipe.errors.count, "error")} prohibited this recipe from being saved:"
       %ul
-        - @recipe.errors.full_messages.each do |msg|
+        - recipe.errors.full_messages.each do |msg|
           %li= msg
   .form-group
     = f.input :name
