@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @recipe.recipe_items.build
   end
 
   # GET /recipes/1/edit
@@ -22,7 +23,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   def create
     @recipe = Recipe.new(recipe_params)
-
+    @recipe.recipe_items.build = RecipeItem.new(recipe_params)
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created.'
     else
@@ -53,6 +54,7 @@ class RecipesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def recipe_params
-      params.require(:recipe).permit(:name, :category)
+      params.require(:recipe).permit(:name, :category,
+                                     recipe_item_attributes:[:amout, :measure])
     end
 end
