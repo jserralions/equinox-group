@@ -1,6 +1,6 @@
 class RecipePolicy < ApplicationPolicy
   def update?
-    user.admin? or record.user == user
+    admin? || owner?
   end
 
   def edit?
@@ -8,6 +8,15 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def destroy?
-    update?
+    admin? || owner?
   end
+
+  private
+    def admin?
+      user.admin?
+    end
+
+    def owner?
+      record.user == user
+    end
 end
