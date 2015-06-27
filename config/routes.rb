@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/users'
+
   root 'recipes#index'
   resources :recipes
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -1,0 +1,15 @@
+%h1 All registered users
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th E-mail
+      %th Is admin?
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.email
+        %td= user.admin

@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     authorize @recipe
-    # @recipe.recipe_items.build
   end
 
   # GET /recipes/1/edit
@@ -26,7 +25,6 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
-    # @recipe.recipe_items.build = RecipeItem.new(recipe_params)
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created.'
     else
