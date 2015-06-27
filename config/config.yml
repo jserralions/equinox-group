@@ -1,4 +1,6 @@
 defaults: &defaults
+  google_id: "set in sec_config"
+  google_secret:  "set in sec_config"
   not_a_secret: test
 
 test:
