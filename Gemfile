@@ -62,6 +62,8 @@ gem 'bootstrap-sass', '~> 3.1.0'
 gem 'quiet_assets'
 gem 'konf'
 
+gem 'nokogiri'
+
 group :development do
   gem 'html2haml'
   gem 'rails_layout'

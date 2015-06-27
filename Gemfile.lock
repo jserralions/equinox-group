@@ -248,6 +248,7 @@ DEPENDENCIES
   html2haml
   jquery-rails
   konf
+  nokogiri
   omniauth
   omniauth-google-oauth2
   pg
