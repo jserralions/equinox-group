@@ -16,4 +16,4 @@
           - if !user_signed_in?
             = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
           - else
-            Signed in as: #{ current_user.email }
+            = link_to "Sign off (#{ current_user.email })", destroy_user_session_path, :method => :delete
