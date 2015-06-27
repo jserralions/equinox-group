@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe AdminController, type: :controller do
 
   describe "GET #users" do
-    it "returns http success" do
+    it "redirects nonadmin user" do
       get :users
-      expect(response).to have_http_status(:success)
+      response.should redirect_to root_path
     end
   end
 

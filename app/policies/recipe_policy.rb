@@ -13,7 +13,7 @@ class RecipePolicy < ApplicationPolicy
 
   private
     def admin?
-      user.admin?
+      user.present? && user.admin?
     end
 
     def owner?
