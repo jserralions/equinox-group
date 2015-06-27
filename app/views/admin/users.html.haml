@@ -6,6 +6,7 @@
       %th Name
       %th E-mail
       %th Is admin?
+      %th
 
   %tbody
     - @users.each do |user|
@@ -13,3 +14,4 @@
         %td= user.name
         %td= user.email
         %td= user.admin
+        %td= link_to 'Toggle admin', toggleadmin_path(:id => user.id), method: :put

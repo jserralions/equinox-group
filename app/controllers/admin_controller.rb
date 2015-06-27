@@ -5,6 +5,13 @@ class AdminController < ApplicationController
     @users = User.all
   end
 
+  def toggleadmin
+    @user = User.find(params[:id])
+    @user.admin = !@user.admin
+    @user.save
+    redirect_to admin_users_path
+  end
+
   private
     def authorized?
       if user_signed_in?
