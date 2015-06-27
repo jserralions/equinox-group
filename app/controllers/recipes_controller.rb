@@ -1,9 +1,11 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
+  expose(:recipes)
+  expose(:recipe) { recipe.recipe_items.build }
+
   # GET /recipes
   def index
-    @recipes = Recipe.all
   end
 
   # GET /recipes/1

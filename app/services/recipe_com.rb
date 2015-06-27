@@ -44,7 +44,7 @@ class RecipeCom
       
       tokens = full_desc.split(' ')
       recipe_item = {}
-      recipe_item[:amout] = tokens.shift  # misspell in model !!!!
+      recipe_item[:amount] = tokens.shift
       recipe_item[:measure] = tokens.join(' ')
       recipe_items << ingredient
     end
