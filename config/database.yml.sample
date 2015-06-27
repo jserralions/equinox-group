@@ -14,7 +14,7 @@ test:
   encoding: unicode
   database: equinox-group_test
   pool:     5
-  username: equinox-group
+  username: postgres
   password:
   template: template0
 
