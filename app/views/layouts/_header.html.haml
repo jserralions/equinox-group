@@ -13,4 +13,7 @@
           %a{:href => "#"} Link
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "#"} Link
+          - if !user_signed_in?
+            = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
+          - else
+            Signed in as: #{ current_user.email }

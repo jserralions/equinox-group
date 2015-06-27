@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150627092723) do
+=======
+ActiveRecord::Schema.define(version: 20150627085851) do
+>>>>>>> Add sign in with Google (configuration, controller and button in site header)
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
