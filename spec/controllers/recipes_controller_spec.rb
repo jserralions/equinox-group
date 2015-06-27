@@ -36,6 +36,15 @@ RSpec.describe RecipesController, type: :controller do
   # RecipesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  let(:user) { build(:user) }
+
+  before do
+    sign_in user
+    controller.stub(:user_signed_in?).and_return(true)
+    controller.stub(:current_user).and_return(user)
+    controller.stub(:authenticate_user!).and_return(user)
+  end
+
   describe "GET #index" do
     it "assigns all recipes as @recipes" do
       recipe = Recipe.create! valid_attributes
