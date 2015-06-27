@@ -60,7 +60,7 @@ class RecipesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def recipe_params
       params.require(:recipe).permit(:name, :category,
-                                     recipe_items_attributes: [:measure, :amout],
+                                     recipe_items_attributes: [:measure, :amount],
                                      ingredients_attributes: [:name])
     end
 end

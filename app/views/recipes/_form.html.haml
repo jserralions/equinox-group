@@ -12,7 +12,7 @@
     = f.simple_fields_for :ingredients do  |ing|
       = ing.input :name
     = f.simple_fields_for :recipe_items do  |ri|
-      = ri.input :amout
+      = ri.input :amount
       = ri.input :measure
     %br
     = f.button :submit, class: "btn btn-success btn-lg", role: "button"
