@@ -2,7 +2,7 @@ before_script:
   - cp config/database.yml.sample config/database.yml
   - psql -c 'create database "equinox-group_test";' -U postgres
   - psql -c 'create user "equinox-group";' -U postgres
-  - psql -c 'ALTER DATABASE name OWNER TO new_owner' -U postgres
+  - psql -c 'ALTER DATABASE "equinox-group_test" OWNER TO "equinox-group' -U postgres
   - psql -c 'GRANT ALL PRIVILEGES ON DATABASE "equinox-group_test" to "equinox-group";' -U postgres
 addons:
   postgresql: "9.3"
