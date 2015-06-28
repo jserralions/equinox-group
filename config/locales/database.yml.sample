@@ -1,0 +1,39 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: equinox-group_development
+  pool:     5
+  username: equinox-group
+  password:
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: equinox-group_test
+  pool:     5
+  username: equinox-group
+  password:
+  template: template0
+
+staging:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: equinox-group_staging
+  pool:     5
+  username: equinox-group
+  password:
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: equinox-group_production
+  pool:     5
+  username: equinox-group
+  password:
+  template: template0

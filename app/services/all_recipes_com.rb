@@ -1,24 +1,24 @@
 require 'nokogiri'
 require 'open-uri'
 
-class GetAllRecipesComRecipeParams
+class AllRecipesCom
 	attr_reader :uri
-	
-	def initialize(uri) 
+
+	def initialize(uri)
 		@uri = uri
 	end
 
 	def parse
 		recipe_params = {}
-		
+
 		recipe_params[:name] = parse_name
 		recipe_params[:ingredients] = parse_ingredients
 		recipe_params
-	end		
+	end
 
 	private
 
-	def doc 
+	def doc
 		@doc ||= Nokogiri::HTML(open(uri))
 	end
 
