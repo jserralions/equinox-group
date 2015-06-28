@@ -62,6 +62,7 @@ gem 'bootstrap-sass', '~> 3.1.0'
 gem 'quiet_assets'
 gem 'konf'
 gem 'railroady'
+gem 'font-awesome-rails', '~>4.3'
 
 gem 'nokogiri'
 
