@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
 
-  expose(:recipes)
-  expose(:recipe)
+  expose(:recipes, attributes: :recipe_params)
+  expose(:recipe, attributes: :recipe_params)
+  expose(:ingredient, attributes: :recipe_params)
 
   # GET /recipes
   def index
@@ -26,6 +27,7 @@ class RecipesController < ApplicationController
   def create
     recipe = Recipe.new(recipe_params)
     recipe.user = current_user
+    binding.pry
     if recipe.save
       redirect_to recipe, notice: 'Recipe was successfully created.'
     else

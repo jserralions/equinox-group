@@ -7,7 +7,12 @@
           %li= msg
   .form-group
     = f.input :name
-    = f.input :category          
+    = f.input :category
+    / = f.simple_fields_for :recipe_items do |rec_item|
+    /   = rec_item.simple_fields_for :ingredient do |ing|
+    /     = ing.input :name
+    /   = rec_item.input :amount
+    /   = rec_item.input :measure
     .links
       = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
     
