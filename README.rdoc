@@ -16,4 +16,4 @@ Features include:
 
 Future:
 
-- User will can made his own weekly menu and prepare shop basket
+- User will be able to make his own weekly menu and prepare a shop basket
