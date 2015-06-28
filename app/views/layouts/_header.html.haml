@@ -6,14 +6,18 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li
-          %a{:href => "#"}
-            Link
-        %li
-          %a{:href => "#"} Link
+        %form.navbar-form.navbar-left{:role => "search"}
+          .form-group
+            %input.form-control{:placeholder => "Search", :type => "text"}/
+          %button.btn.btn-default{:type => "submit"} Submit
       %ul.nav.navbar-nav.navbar-right
         %li
           - if !user_signed_in?
             = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
           - else
             = link_to "Sign off (#{ current_user.email })", destroy_user_session_path, :method => :delete
+
+%form.navbar-form.navbar-left{:role => "search"}
+  .form-group
+    %input.form-control{:placeholder => "Search", :type => "text"}/
+  %button.btn.btn-default{:type => "submit"} Submit
