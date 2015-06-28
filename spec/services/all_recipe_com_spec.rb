@@ -3,6 +3,8 @@ require 'rails_helper'
 describe AllRecipesCom do
   subject(:recipe) { AllRecipesCom.new(url) }
   let(:url) { "http://allrecipes.com/Recipe/Slow-Cooker-Balsamic-Chicken/Detail.aspx?soid=recs_recipe_1"}
+  before { WebMock.allow_net_connect! }
+  after { WebMock.disable_net_connect! }
 
   context 'check recipe in www' do
     it "should return uri" do
