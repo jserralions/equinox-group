@@ -1,6 +1,6 @@
 #RSPEC CAPYBARA-WEBKIT SETTINGS
 
-In order to be able to run app with capybara-webkit gem you need to follow there steps:
+In order to run app with capybara-webkit gem you need to follow these steps:
 
 Run this command:
 
