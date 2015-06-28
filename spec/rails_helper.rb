@@ -9,6 +9,10 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'rake'
+require 'database_cleaner'
+require 'elasticsearch/extensions/test/cluster/tasks'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -33,9 +37,28 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
 
   config.include Warden::Test::Helpers
+
   config.before :suite do
     Warden.test_mode!
   end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
+
+  ENV["TEST_CLUSTER_NODES"] = "1"
+  config.before :each, elasticsearch: true do
+    unless Elasticsearch::Extensions::Test::Cluster.running?
+      Elasticsearch::Extensions::Test::Cluster.start(port: 9200)
+    end
+  end
+
+  config.after :suite do
+    if Elasticsearch::Extensions::Test::Cluster.running?
+      Elasticsearch::Extensions::Test::Cluster.stop(port: 9200)
+    end
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryGirl::Syntax::Methods
@@ -61,4 +84,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Devise::TestHelpers, type: :controller
+
 end
