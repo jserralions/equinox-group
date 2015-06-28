@@ -7,4 +7,5 @@ class Recipe < ActiveRecord::Base
                                 allow_destroy: true
   accepts_nested_attributes_for :ingredients
   validates_presence_of :name, :category
+  mount_uploader :image, ImageUploader
 end
