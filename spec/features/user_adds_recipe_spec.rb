@@ -21,4 +21,10 @@ feature "User can" do
     visit recipe_path(recipe)
     expect(page).to have_content recipe.name
   end
+
+  scenario "edit recipes" do
+    user = create(:user)
+    login_as(user, :scope => :user)
+    recipe = create(:recipe)
+  end
 end

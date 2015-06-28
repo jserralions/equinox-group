@@ -3,7 +3,7 @@ require 'capybara/rspec'
 require 'capybara/dsl'
 require 'capybara'
 require 'webmock/rspec'
-
+Capybara.javascript_driver = :webkit
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -13,6 +13,7 @@ require 'rspec/rails'
 require 'rake'
 require 'database_cleaner'
 require 'elasticsearch/extensions/test/cluster/tasks'
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

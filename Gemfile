@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem "cocoon"
-gem "capybara-webkit"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -37,7 +37,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
@@ -49,6 +48,8 @@ group :test do
   gem 'database_cleaner'
   gem 'elasticsearch-extensions'
   gem 'webmock'
+  gem 'capybara-webkit'
+  gem 'capybara'
 end
 
 gem 'faker'
@@ -67,7 +68,6 @@ gem 'konf'
 gem 'railroady'
 gem 'font-awesome-rails', '~>4.3'
 gem 'carrierwave'
-gem 'capybara'
 
 gem 'nokogiri'
 gem 'elasticsearch-rails'
