@@ -47,6 +47,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'elasticsearch-extensions'
+  gem 'webmock'
 end
 
 gem 'faker'
@@ -66,7 +67,6 @@ gem 'railroady'
 gem 'font-awesome-rails', '~>4.3'
 gem 'carrierwave'
 gem 'capybara'
-gem 'webmock'
 
 gem 'nokogiri'
 gem 'elasticsearch-rails'
