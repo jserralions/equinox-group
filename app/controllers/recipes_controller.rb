@@ -13,12 +13,12 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    #authorize recipe
+    authorize recipe
   end
 
   # GET /recipes/1/edit
   def edit
-    #authorize recipe
+    authorize recipe
     recipe.recipe_items
   end
 
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-    #authorize recipe
+    authorize recipe
     recipe = Recipe.find(params[:id])
     if recipe.update(recipe_params)
       redirect_to recipe, notice: 'Recipe was successfully updated.'
@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1
   def destroy
-    #authorize recipe
+    authorize recipe
     recipe.destroy
     redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end

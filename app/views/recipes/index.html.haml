@@ -15,11 +15,12 @@
         %td= recipe.name
         %td= recipe.category
         %td= link_to 'Show', recipe
-        %td= link_to 'Edit', edit_recipe_path(recipe)
-        %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if policy(recipe).update?
+          %td= link_to 'Edit', edit_recipe_path(recipe)
+        - if policy(recipe).destroy?
+          %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Recipe', new_recipe_path
-
-
+- if policy(recipe).create?
+  = link_to 'New Recipe', new_recipe_path
