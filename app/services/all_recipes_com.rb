@@ -33,7 +33,7 @@ class AllRecipesCom
 			amount_measure = item.css('.ingredient-amount').text.split(' ')
 
 			ingredient = {}
-			ingredient[:ammount] = amount_measure.shift
+			ingredient[:amount] = amount_measure.shift
 			ingredient[:measure] = amount_measure.join(' ')
 			ingredient[:name] = item.css('.ingredient-name').text
 
