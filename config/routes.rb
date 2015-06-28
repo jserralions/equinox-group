@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'search/:name_query' => 'search#index'
+  get 'search/index' => 'search#index', :as =>  "search"
 
   get 'admin/users'
   match 'admin/users/toggle/:id', :to => "admin#toggleadmin", :as => :toggleadmin, via: [:put]
