@@ -14,7 +14,7 @@ feature "User can" do
     expect(page).to have_content 'MyRecipe'
   end
 
-  xscenario "add new recipes with ingredients" do
+  scenario "add new recipes with ingredients" do
     user = create(:user)
     login_as(user, :scope => :user)
     visit new_recipe_path
