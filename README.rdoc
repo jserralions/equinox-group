@@ -4,13 +4,15 @@ Sample APP made on Netguru Workshop
 
 Application data based on allrecipes.com. We use revolution algorithm to collect precious recipes and store them.
 
-Features includes:
+Features include:
 
 - Search
 
 - Add, edit, delete
 
-- Agregate recipes from diffrent sites
+- Import recipe from different site
+
+- Aggregate many recipes from other sites
 
 Future:
 
