@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem "cocoon"
+gem "capybara-webkit"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
