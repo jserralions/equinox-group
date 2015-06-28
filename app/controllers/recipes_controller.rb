@@ -20,7 +20,6 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     authorize recipe
-    recipe.recipe_items
   end
 
   # POST /recipes
@@ -35,7 +34,6 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-    recipe = Recipe.find(params[:id])
     authorize recipe
     if recipe.update(recipe_params)
       redirect_to recipe, notice: 'Recipe was successfully updated.'
