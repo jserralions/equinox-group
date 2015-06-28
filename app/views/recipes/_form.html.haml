@@ -11,13 +11,8 @@
         = f.input :image_cache, as: :hidden
         = f.input :name
         = f.input :category
-        = f.simple_fields_for :recipe_item do |ri|
-          = ri.simple_fields_for :ingredient do |ing|
-            = ing.input :name
-          = ri.input :amount
-          = ri.input :measure
         .links
-        = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
+          = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
         %br/
         %br/
         = f.button :submit, class: "btn btn-success btn-xs", role: "button"
