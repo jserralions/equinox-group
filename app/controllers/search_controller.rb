@@ -7,7 +7,10 @@ class SearchController < ApplicationController
   def index
   end
 
+  private
+
   def search_recipes
-    Recipe.search(params[:name_query]).results.to_a
+    # Recipe.search(params[:name_query]).results.to_a
+    Recipe.where("name like ?", params[:name_query])
   end
 end

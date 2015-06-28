@@ -22,4 +22,4 @@ class Recipe < ActiveRecord::Base
 
 end
 
-Recipe.import
+# Recipe.import
