@@ -20,3 +20,11 @@ Future:
 
 To configure Capybara WebKit use below link:
 https://github.com/thoughtbot/capybara-webkit
+
+Google authentication configuration:
+
+In order for authentication to work properly, you need to have access to the Google API. Please add your Google ID and Secret to the config/sec_conf.yml file (a sample is provided). The Google access information should be of this format:
+
+  defaults: &defaults
+   google_id: $GOOGLE_ID
+   google_secret: $SECRET
