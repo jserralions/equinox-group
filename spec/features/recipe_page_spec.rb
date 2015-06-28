@@ -7,4 +7,5 @@ feature "Seeing" do
     expect(page).to have_content("Recipes")
   end
 
+
 end
