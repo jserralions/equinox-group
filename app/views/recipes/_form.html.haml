@@ -1,21 +1,23 @@
-= simple_form_for recipe, html: {class: "well"} do |f|
-  - if recipe.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(recipe.errors.count, "error")} prohibited this recipe from being saved:"
-      %ul
-        - recipe.errors.full_messages.each do |msg|
-          %li= msg
-  .form-group
-    = f.input :name
-    = f.input :category
-    / = f.simple_fields_for :recipe_items do |rec_item|
-    /   = rec_item.simple_fields_for :ingredient do |ing|
-    /     = ing.input :name
-    /   = rec_item.input :amount
-    /   = rec_item.input :measure
-    .links
-      = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
-    
-    
-    %br
-    = f.button :submit, class: "btn btn-success btn-lg", role: "button"
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+  .panel-body
+    .form
+      .fieldset
+      = simple_form_for recipe do |f|
+        = f.error_notification
+        .form-group
+        = f.input :image, label: false, placeholder: "Image", required: false, as: :file
+        = f.input :image_cache, as: :hidden
+        = f.input :name
+        = f.input :category
+        = f.simple_fields_for :recipe_item do |ri|
+          = ri.simple_fields_for :ingredient do |ing|
+            = ing.input :name
+          = ri.input :amount
+          = ri.input :measure
+        .links
+        = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
+        %br/
+        %br/
+        = f.button :submit, class: "btn btn-success btn-xs", role: "button"

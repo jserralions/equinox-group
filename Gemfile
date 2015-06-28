@@ -63,6 +63,9 @@ gem 'quiet_assets'
 gem 'konf'
 gem 'railroady'
 gem 'font-awesome-rails', '~>4.3'
+gem 'carrierwave'
+gem 'capybara'
+gem 'webmock'
 
 gem 'nokogiri'
 

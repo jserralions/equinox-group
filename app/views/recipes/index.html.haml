@@ -1,26 +1,19 @@
-%h1 Recent recipes
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Category
-      %th
-      %th
-      %th
-
-  %tbody
+.container
+  .col-md-12
     - recipes.each do |recipe|
-      %tr
-        %td= recipe.name
-        %td= recipe.category
-        %td= link_to 'Show', recipe
-        - if policy(recipe).update?
-          %td= link_to 'Edit', edit_recipe_path(recipe)
-        - if policy(recipe).destroy?
-          %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .col-sm-4.col-lg-4.col-md-4
+        .panel.panel-default
+          .panel-body
+            .col-md-6
+              - if recipe.image.present?
+                = link_to image_tag(recipe.image_url, alt: "#{recipe.name}", size: "150x150"), recipe
+              - else
+                = image_tag(recipe.image.default_url, size: "150x150")
+            .col-md-6
+              %p
+                = truncate(recipe.name, length: 20)
+              %p
+                = recipe.category
 
-%br
 
-- if policy(recipe).create?
-  = link_to 'New Recipe', new_recipe_path
+
