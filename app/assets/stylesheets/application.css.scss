@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
-a.edit, a.delete, a.back {
+a.edit, a.delete, a.back, a.new {
   @extend .btn-sm;
 
   &:before {
@@ -29,5 +29,13 @@ a.back {
 
   &:before {
   @extend .fa-arrow-circle-left;
+  }
+}
+
+a.new {
+  @extend .btn-success;
+
+  &:before {
+    @extend .fa-plus;
   }
 }
