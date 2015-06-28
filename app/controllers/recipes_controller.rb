@@ -34,7 +34,6 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-    recipe.recipe_items
     authorize recipe
     if recipe.update(recipe_params)
       redirect_to recipe, notice: 'Recipe was successfully updated.'
