@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  pundit:
+    default: 'You are not authorized to perform this action.'
+    recipe_policy:
+      create?: 'You are not authorized to create posts.'
+      new?: 'You are not authorized to create posts.'
+      update?: 'You are not authorized to edit this post.'
+      destroy?: 'You are not authorized to delete this post.'
