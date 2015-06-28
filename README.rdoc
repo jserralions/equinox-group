@@ -17,3 +17,6 @@ Features include:
 Future:
 
 - User will be able to make his own weekly menu and prepare a shop basket
+
+To configure Capybara WebKit use below link:
+https://github.com/thoughtbot/capybara-webkit
