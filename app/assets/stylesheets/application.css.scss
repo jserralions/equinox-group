@@ -1,3 +1,33 @@
 @import "bootstrap";
+@import "font-awesome";
 
+a.edit, a.delete, a.back {
+  @extend .btn-sm;
 
+  &:before {
+    font-family: "FontAwesome";
+    padding-right: 0.5em;
+  }
+}
+a.edit {
+  @extend .btn-primary;
+
+  &:before {
+    @extend .fa-pencil;
+  }
+}
+a.delete {
+  @extend .btn-danger;
+
+  &:before {
+    @extend .fa-trash;
+  }
+}
+
+a.back {
+  @extend .btn-info;
+
+  &:before {
+  @extend .fa-arrow-circle-left;
+  }
+}
