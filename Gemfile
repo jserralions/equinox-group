@@ -46,6 +46,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'elasticsearch-extensions'
 end
 
 gem 'faker'
@@ -68,6 +69,8 @@ gem 'capybara'
 gem 'webmock'
 
 gem 'nokogiri'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 group :development do
   gem 'html2haml'
