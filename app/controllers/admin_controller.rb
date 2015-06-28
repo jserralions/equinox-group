@@ -1,8 +1,9 @@
 class AdminController < ApplicationController
   before_filter :authorized?
 
+  expose(:registered_users) { User.all }
+
   def users
-    @users = User.all
   end
 
   def toggleadmin
