@@ -1,0 +1,10 @@
+%h1 Search#index
+
+= render 'search/form'
+
+- unless recipes.nil?
+  %ul
+    - recipes.each do |recipe|
+      %li= recipe.name
+
+
