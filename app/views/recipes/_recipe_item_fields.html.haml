@@ -1,0 +1,7 @@
+.nested-fields
+  = f.simple_fields_for :ingredient do |ing|
+    = ing.input :name
+  = f.input :amount
+  = f.input :measure
+  
+  = link_to_remove_association "remove", f

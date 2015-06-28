@@ -7,12 +7,10 @@
           %li= msg
   .form-group
     = f.input :name
-    = f.input :category
-    %button.btn.btn-success Add Ingredient
-    = f.simple_fields_for :ingredients do  |ing|
-      = ing.input :name
-    = f.simple_fields_for :recipe_items do  |ri|
-      = ri.input :amount
-      = ri.input :measure
+    = f.input :category          
+    .links
+      = link_to_add_association 'Add ingredient', f, :recipe_items, :wrap_object => Proc.new {|recipe_item| recipe_item.build_ingredient; recipe_item }
+    
+    
     %br
     = f.button :submit, class: "btn btn-success btn-lg", role: "button"

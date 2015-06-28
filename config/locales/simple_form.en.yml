@@ -14,11 +14,18 @@ en:
     labels:
       defaults:
         password: 'Password'
-      ingredients:
+      ingredient:
         new:
           name: 'Ingredient name'
         edit:
           name: 'Ingredient name'
+      recipe_items:
+        new:
+          amount: 'Ingredient amount'
+          measure: 'Ingredient measure'
+        edit:
+          amount: 'Ingredient amount'
+          measure: 'Ingredient measure'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'

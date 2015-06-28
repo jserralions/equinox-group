@@ -14,13 +14,12 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     #authorize recipe
-    recipe.recipe_items.build
-    recipe.ingredients.build
   end
 
   # GET /recipes/1/edit
   def edit
     #authorize recipe
+    recipe.recipe_items
   end
 
   # POST /recipes
@@ -37,6 +36,7 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1
   def update
     #authorize recipe
+    recipe = Recipe.find(params[:id])
     if recipe.update(recipe_params)
       redirect_to recipe, notice: 'Recipe was successfully updated.'
     else
@@ -56,6 +56,6 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:name, :category,
                                      recipe_items_attributes: [:measure, :amount,
-                                     ingredients_attributes: [:name]])
+                                     ingredient_attributes: [:name]])
     end
 end
