@@ -1,7 +1,7 @@
 # Equinox- Group
 
 Sample APP made on Netguru Workshop with Ruby on Rails, data is based on allrecipes.com.
-We use revolution algorithm to collect precious recipes and store them.
+We use revolutionary algorithm to collect precious recipes and store them.
 
 ### We used:
 * Ruby on Rails [4.2.1]
@@ -36,7 +36,7 @@ We use revolution algorithm to collect precious recipes and store them.
 
 ### Google authentication configuration
 In order for authentication to work properly, you need to have access to the Google API. Please add your Google ID and
-Secret to the: 
+Secret to the:
 
 ```sh
 $ /config/sec_config.yml
