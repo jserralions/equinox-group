@@ -1,7 +1,11 @@
 # Equinox- Group
 
 Sample APP made on Netguru Workshop with Ruby on Rails, data is based on allrecipes.com.
-We use revolutionary algorithm to collect precious recipes and store them.
+We use revolutionary website crawler algorithm to collect precious recipes and store them.
+
+Website crawler algorithm traverses selected website category and for each recipe a html source is downloaded.
+Recipe data is extracted from html source using nokogiri.
+Collected data contains recipe name and a list of ingredients divided into: name of ingredient, unit and required ingredient amount.
 
 ### We used:
 * Ruby on Rails [4.2.1]
