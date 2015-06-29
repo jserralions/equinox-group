@@ -11,6 +11,6 @@ class SearchController < ApplicationController
 
   def search_recipes
     # Recipe.search(params[:name_query]).results.to_a
-    Recipe.where("name like ?", params[:name_query])
+    Recipe.where("name like ? OR category like ?", "%#{params[:name_query]}%", "%#{params[:name_query]}%")
   end
 end
