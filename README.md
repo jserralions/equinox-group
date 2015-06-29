@@ -69,9 +69,9 @@ sudo apt-get install g++
 
 ### Elastic search installation:
 
-##### On Linux Machine:
+#### On Linux Machine:
 
-####### Elastic search require Java, so you need to:
+###### Elastic search require Java, so you need to:
 
 Add the Oracle Java PPA to apt:
 ```sh
@@ -85,7 +85,7 @@ Install the latest stable version of Oracle Java:
 ```sh
 sudo apt-get -y install oracle-java8-installer
 ```
-####### Install Elasticsearch
+###### Install Elasticsearch
 
 Run the following command to import the Elasticsearch public GPG key into apt:
 ```sh
