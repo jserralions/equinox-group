@@ -67,4 +67,44 @@ And then:
 sudo apt-get install g++
 ```
 
+### Elastic search installation:
 
+##### On Linux Machine:
+
+####### Elastic search require Java, so you need to:
+
+Add the Oracle Java PPA to apt:
+
+sudo add-apt-repository -y ppa:webupd8team/java
+
+Update your apt package database:
+
+sudo apt-get update
+
+Install the latest stable version of Oracle Java:
+
+sudo apt-get -y install oracle-java8-installer
+
+####### Install Elasticsearch
+
+Run the following command to import the Elasticsearch public GPG key into apt:
+
+wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+
+Create the Elasticsearch source list:
+
+echo 'deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main' | sudo tee /etc/apt/sources.list.d/elasticsearch.list
+
+Update your apt package database:
+
+sudo apt-get update
+
+Install Elasticsearch with this command:
+
+sudo apt-get -y install elasticsearch=1.4.4
+
+Now start Elasticsearch:
+
+sudo service elasticsearch restart
+
+Original source of this instructions: https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-4-on-ubuntu-14-04
