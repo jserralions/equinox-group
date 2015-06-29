@@ -71,7 +71,7 @@ sudo apt-get install g++
 
 #### On Linux Machine:
 
-###### Elasticsearch require Java, so you need to:
+###### Elasticsearch requires Java, so you need to:
 
 Add the Oracle Java PPA to apt:
 ```sh
