@@ -50,7 +50,7 @@ defaults: &defaults
   google_secret: $SECRET
 ````
 
-### RSpec Capybara-Webkit Setting
+### RSpec Capybara-Webkit Settings
 
 To configure Capybara WebKit use link : https://github.com/thoughtbot/capybara-webkit
 
@@ -67,11 +67,11 @@ And then:
 sudo apt-get install g++
 ```
 
-### Elastic search installation:
+### Elasticsearch installation:
 
 #### On Linux Machine:
 
-###### Elastic search require Java, so you need to:
+###### Elasticsearch require Java, so you need to:
 
 Add the Oracle Java PPA to apt:
 ```sh
