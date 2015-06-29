@@ -29,18 +29,21 @@ We use revolution algorithm to collect precious recipes and store them.
     * Add his own recipes
     * Edit and delete his recipes
 2. Search
-3. Grab data from other www
+3. Aggregate many recipes from other sites
    * with our algorith
 4. Future
- * User will be able to made his own shop basket, 
- to easier shopping
+ * User will be able to make his own weekly menu and prepare a shop basket
 
-### Google Settings
+### Google authentication configuration
+In order for authentication to work properly, you need to have access to the Google API. Please add your Google ID and
+Secret to the: 
 
 ```sh
 $ /config/sec_config.yml
 ```
+(a sample is provided)
 
+The Google access information should be of this format:
 ```ruby
 defaults: &defaults
   google_id: $GOOGLE_ID
