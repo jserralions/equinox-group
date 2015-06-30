@@ -10,7 +10,6 @@ RSpec.describe SearchController, type: :controller do
     it "returns items by partial name" do
       Recipe.create!(name: 'Tomato Soup', category: 'soups')
       get :index, { name_query: 'Tomato Soup' }
-      binding.pry
       expect(controller.recipes.first).to eq('Tomato Soup')
     end
   end
